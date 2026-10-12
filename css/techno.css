@@ -1,0 +1,417 @@
+/* --- PAGE --- */
+body {
+    padding: 40px 20px;
+    display: block;
+    /* annule le flex de style.css */
+}
+
+#particles-js {
+    pointer-events: none;
+}
+
+/* --- HEADER --- */
+.tech-header {
+    text-align: center;
+    margin: 30px 0 50px;
+}
+
+.tech-header h1 {
+    font-size: 2.5rem;
+    color: var(--heading-color);
+    margin-bottom: 10px;
+}
+
+.tech-header p {
+    color: var(--subtext-color);
+    font-size: 1.1rem;
+}
+
+/* --- FRISE --- */
+.timeline-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+/* Ligne centrale grise */
+.timeline-progress-bar {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background-color: var(--border-color);
+    border-radius: 2px;
+}
+
+/* Ligne qui se remplit (hauteur gérée par le JS en px) */
+#progress-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: linear-gradient(to bottom, #0044ff, #00ffcc);
+    border-radius: 2px;
+}
+
+/* Animation d'apparition */
+.timeline-item,
+.timeline-stage {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.timeline-item.visible,
+.timeline-stage.visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* --- GRAND JALON (formation) --- */
+.timeline-stage {
+    position: relative;
+    z-index: 2;
+    max-width: 520px;
+    margin: 120px auto 80px;
+    padding: 25px 30px;
+    text-align: center;
+    background: var(--card-solid);
+    border: 2px solid #0044ff;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0, 68, 255, 0.15);
+    transition: opacity 0.6s ease, transform 0.6s ease, scale 0.3s ease;
+}
+
+.timeline-progress-bar+.timeline-stage {
+    margin-top: 0;
+}
+
+.timeline-stage h2 {
+    margin: 0 0 8px;
+    font-size: 1.7rem;
+    color: var(--heading-color);
+}
+
+.timeline-stage p {
+    margin: 0;
+    color: var(--subtext-color);
+}
+
+.timeline-stage .timeline-dot {
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-stage:hover,
+.timeline-stage.current {
+    scale: 1.05;
+}
+
+/* --- CARTES TECHNOLOGIES (alternance gauche / droite) --- */
+.timeline-item {
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+}
+
+.timeline-item:nth-of-type(odd) {
+    padding-right: 65px;
+}
+
+.timeline-item:nth-of-type(even) {
+    margin-left: 50%;
+    padding-left: 65px;
+}
+
+/* --- POINTS --- */
+.timeline-dot {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 16px !important;
+    height: 16px !important;
+    background-color: var(--card-bg-light, #1a1a1a) !important;
+    /* Fond neutre par défaut en mode clair */
+    border: 3px solid #0044ff !important;
+    /* Bordure bleue en mode clair */
+    border-radius: 50% !important;
+    z-index: 10 !important;
+    display: block !important;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease !important;
+}
+
+/* Pour les items impairs (carte à gauche) : le point doit aller se poser sur la ligne centrale à droite de sa carte */
+.timeline-item:nth-of-type(odd) .timeline-dot {
+    right: 30px !important;
+    /* Ajusté pour tomber pile sur la ligne centrale */
+    left: auto !important;
+}
+
+/* Pour les items pairs (carte à droite) : le point doit aller se poser sur la ligne centrale à gauche de sa carte */
+.timeline-item:nth-of-type(even) .timeline-dot {
+    left: 30px !important;
+    /* Ajusté pour tomber pile sur la ligne centrale */
+    right: auto !important;
+}
+
+/* Remplissage du point quand la barre de progression l'atteint (Mode Clair) */
+.timeline-dot.active {
+    background-color: #0044ff !important;
+    border-color: #0044ff !important;
+    box-shadow: 0 0 12px rgba(0, 68, 255, 0.5);
+    transform: translateY(-50%) scale(1.25) !important;
+}
+
+/* --- MODE SOMBRE POUR LES POINTS --- */
+/* De base en mode sombre, les points ont une bordure turquoise (#00ffcc) et non bleue */
+html.dark-mode .timeline-dot {
+    border-color: #00ffcc !important;
+    background-color: var(--card-solid, #1a1a1a) !important;
+}
+
+/* Quand ils sont actifs en mode sombre (remplis en turquoise) */
+html.dark-mode .timeline-dot.active {
+    background-color: #00ffcc !important;
+    border-color: #00ffcc !important;
+    box-shadow: 0 0 12px rgba(0, 255, 204, 0.5);
+    transform: translateY(-50%) scale(1.25) !important;
+}
+
+/* --- CARTE --- */
+.timeline-content {
+    background: var(--card-bg-light);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+    transition: scale 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Le bloc grossit vers l'extérieur, du côté opposé à la ligne */
+.timeline-item:nth-of-type(odd) .timeline-content {
+    transform-origin: right center;
+}
+
+.timeline-item:nth-of-type(even) .timeline-content {
+    transform-origin: left center;
+}
+
+/* Grossissement : au survol, ou pour le bloc en face du point de référence */
+.timeline-content:hover,
+.timeline-item.current .timeline-content {
+    scale: 1.04;
+    border-color: #0044ff;
+    box-shadow: 0 10px 30px rgba(0, 68, 255, 0.18);
+}
+
+.timeline-date {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #0044ff;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.timeline-content h3 {
+    margin: 0 0 10px;
+    font-size: 1.25rem;
+    color: var(--heading-color);
+    text-align: left;
+}
+
+.timeline-content p {
+    margin: 0 0 15px;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+/* Tags */
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-tags span {
+    background-color: rgba(0, 68, 255, 0.1);
+    color: #0044ff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    /* Indique visuellement que l'élément est cliquable */
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.tech-tags span:hover {
+    background-color: rgba(0, 68, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* --- STYLE GLOBAL DES MODALES (Centrage et Design identique aux cartes) --- */
+.modal {
+    display: none;
+    /* Cachée par défaut */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Fond assombri derrière la modale */
+    backdrop-filter: blur(5px);
+    /* Effet de flou en arrière-plan */
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: var(--card-bg-light, #1a1a1a);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    margin: 15vh auto;
+    /* Centre verticalement avec une marge automatique, et horizontalement via auto */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 68, 255, 0.18);
+    border: 1px solid #0044ff;
+    /* Bordure bleue par défaut en mode clair */
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+/* Bouton de fermeture (la croix) */
+.modal-content .close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--heading-color);
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.modal-content .close:hover {
+    color: #0044ff;
+}
+
+/* Style de l'image dans la modale de technologie */
+#modal-tech-img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin: 0 auto 15px auto;
+    display: block;
+    background: transparent; /* Pas de fond */
+}
+
+/* Si certaines images ont un fond blanc d'origine que tu veux rendre transparent par transparence de fusion */
+html.dark-mode #modal-tech-img {
+    /* Ajoute un léger filtre ou laisse transparent selon tes fichiers */
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* --- MODE SOMBRE POUR LA MODALE --- */
+html.dark-mode .modal-content {
+    background: var(--card-solid, #1a1a1a);
+    border-color: #00ffcc;
+    /* Bordure turquoise en mode sombre */
+    box-shadow: 0 10px 30px rgba(0, 255, 204, 0.15);
+}
+
+html.dark-mode .modal-content .close:hover {
+    color: #00ffcc;
+}
+
+html.dark-mode .tech-tags span {
+    background-color: rgba(0, 255, 204, 0.1);
+    color: #00ffcc;
+}
+
+html.dark-mode .tech-tags span:hover {
+    background-color: rgba(0, 255, 204, 0.2);
+}
+
+/* --- MODE SOMBRE --- */
+html.dark-mode .timeline-stage {
+    border-color: #00ffcc;
+    box-shadow: 0 6px 20px rgba(0, 255, 204, 0.12);
+}
+
+html.dark-mode .timeline-dot.active {
+    background-color: #00ffcc;
+    border-color: #00ffcc;
+    box-shadow: 0 0 12px rgba(0, 255, 204, 0.5);
+}
+
+html.dark-mode .timeline-content:hover,
+html.dark-mode .timeline-item.current .timeline-content {
+    border-color: #00ffcc;
+    box-shadow: 0 10px 30px rgba(0, 255, 204, 0.15);
+}
+
+html.dark-mode .timeline-date {
+    color: #00ffcc;
+}
+
+html.dark-mode .tech-tags span {
+    background-color: rgba(0, 255, 204, 0.1);
+    color: #00ffcc;
+}
+
+/* --- MOBILE : ligne à gauche --- */
+@media (max-width: 768px) {
+    .timeline-progress-bar {
+        left: 22px;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-of-type(odd),
+    .timeline-item:nth-of-type(even) {
+        width: 100%;
+        margin-left: 0;
+        padding: 0 0 0 55px;
+    }
+
+    .timeline-item:nth-of-type(odd) .timeline-dot,
+    .timeline-item:nth-of-type(even) .timeline-dot {
+        left: 12px;
+        right: auto;
+    }
+
+    .timeline-item .timeline-content {
+        transform-origin: left center !important;
+    }
+
+    .timeline-content:hover,
+    .timeline-item.current .timeline-content {
+        scale: 1.02;
+    }
+
+    .timeline-stage {
+        max-width: none;
+        margin-left: 50px;
+        text-align: left;
+    }
+
+    .timeline-stage .timeline-dot {
+        top: 22px;
+        left: -40px;
+        transform: none;
+    }
+}

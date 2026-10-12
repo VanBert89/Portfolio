@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Projets</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <div id="particles-js"></div>
+
+    <a href="../pages/index.html" id="back-btn" class="button2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-corner-down-left btn-icon">
+            <path d="M20 4v7a4 4 0 0 1-4 4H4" />
+            <path d="m9 10-5 5 5 5" />
+        </svg>
+        <span id="back-text">Retour à l'index</span>
+    </a>
+
+    <section id="projets" class="projets-section">
+        <div class="container-projets">
+            <h1>Mes Projets</h1>
+            <p class="subtitle">Retrouvez ici une sélection de mes réalisations et projets de développement.</p>
+
+            <div class="projets-grid">
+
+                <div class="projet-card" onclick="ouvrirModal('modal-premiersite')">
+                    <h3>Premier Site</h3>
+                    <p>Développement d'un site WEB sur le sujet de notre choix.</p>
+                    <span class="clic-indication">Cliquez pour en savoir plus +</span>
+                </div>
+
+                <div class="projet-card" onclick="ouvrirModal('modal-zelda')">
+                    <h3>Jeu Zelda (Python)</h3>
+                    <p>Développement d'un script en Python interactif en ligne de commande.</p>
+                    <span class="clic-indication">Cliquez pour en savoir plus +</span>
+                </div>
+
+                <div class="projet-card" onclick="ouvrirModal('modal-siteinventaire')">
+                    <h3>Interface de gestion d'inventaire</h3>
+                    <p>Développement d'une interface WEB de gestion d'inventaire de matériel informatique.</p>
+                    <span class="clic-indication">Cliquez pour en savoir plus +</span>
+                </div>
+
+                <div class="projet-card" onclick="ouvrirModal('modal-sitepersonnel')">
+                    <h3>Interface de gestion de personnel</h3>
+                    <p>Développement d'une interface WEB de gestion de personnel.</p>
+                    <span class="clic-indication">Cliquez pour en savoir plus +</span>
+                </div>
+
+                <div class="projet-card" onclick="ouvrirModal('modal-portfolio')">
+                    <h3>Portfolio Web</h3>
+                    <p>Création d'un site web personnel responsive en HTML, CSS et Flexbox.</p>
+                    <span class="clic-indication">Cliquez pour en savoir plus +</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div id="modal-premiersite" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fermerModal('modal-premiersite')">&times;</span>
+            <h2>Premier Site</h2>
+            <p><strong>Description détaillée :</strong></p>
+            <p>Ce projet était mon 1er projet individuel à effectuer dans mon BTS. On devait faire un petit site (local)
+                en HTML sur le sujet de mon choix. C'était ma vraie première expérience avec le HTML.
+            </p>
+            <p><strong>Technologies utilisées :</strong> HTML (Création du front-end du site), CSS (Design et mise en
+                forme) et JS (Quiz et interactions avec l'utilisateur).</p>
+        </div>
+    </div>
+
+    <div id="modal-zelda" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fermerModal('modal-zelda')">&times;</span>
+            <h2>Jeu Zelda (Python)</h2>
+            <p><strong>Description détaillée :</strong></p>
+            <p>Ce projet consiste en la création complète d'un script interactif en Python (nommé "Jeu_Zelda.py"). Il
+                gère les déplacements, des combats textuels, et un système de sauvegarde/redémarrage directement depuis
+                le terminal en ligne de commande. Ceci était un projet en coopération de création d'un jeu interactif,
+                diverses évènements et plusieurs fonctionnalités.</p>
+            <p><strong>Technologies utilisées :</strong> Python (modules natifs, structures conditionnelles, boucles et
+                gestion des entrées utilisateur).</p>
+        </div>
+    </div>
+
+    <div id="modal-siteinventaire" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fermerModal('modal-siteinventaire')">&times;</span>
+            <h2>Interface de gestion d'inventaire</h2>
+            <p><strong>Description détaillée :</strong></p>
+            <p>En tant que stagiaire dans une entreprise, mes responsables m'ont confié la tâche de développer une
+                interface de gestion de leur matériel informatique. Lorsque je suis arrivé, ils avaient juste un fichier
+                .csv (excel) contenant les matériels, et maintenant grâce à mon passage ils ont une interface fluide et
+                ergonomique pour renseigner un matériel dans leur Base De Données. Ce projet m'a permis de passer en
+                2ème année de BTS.
+
+            </p>
+            <p><strong>Technologies utilisées :</strong> HTML (Création du front-end du site), PHP (Mise en relation
+                entre l'interface et la BDD), CSS (Design et mise en forme) et JS (Fonctionnalités et affichage).</p>
+        </div>
+    </div>
+
+    <div id="modal-sitepersonnel" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fermerModal('modal-sitepersonnel')">&times;</span>
+            <h2>Interface de gestion de personnel</h2>
+            <p><strong>Description détaillée :</strong></p>
+            <p>En tant qu'intérimaire dans la même entreprise que le projet précedent, mes responsables m'ont confié la
+                tâche de développer une interface de gestion de l'ensemble du personnel présent dans l'entreprise.
+                Ceci étant presque le même principe que pour l'autre interface, ce qui différait était juste les
+                requêtes SQL, les tables et l'optimisation sur l'interface. Globalement, les deux se ressemblent
+                beaucoup. L'entreprise m'a gardé quatre semaines de plus après mon stage pour pouvoir effectuer cette
+                tâche et renforcer mon expérience dans le domaine.
+
+            </p>
+            <p><strong>Technologies utilisées :</strong> HTML (Création du front-end du site), PHP (Mise en relation
+                entre l'interface et la BDD), CSS (Design et mise en forme) et JS (Fonctionnalités et affichage).</p>
+        </div>
+    </div>
+
+    <div id="modal-portfolio" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fermerModal('modal-portfolio')">&times;</span>
+            <h2>Portfolio Web</h2>
+            <p><strong>Description détaillée :</strong></p>
+            <p>Conception d'un site web personnel entièrement responsive. L'objectif était de structurer un portfolio
+                moderne en utilisant HTML, CSS, les grilles et Flexbox, tout en assurant une compatibilité parfaite
+                entre les écrans de PC et de smartphones.</p>
+            <p><strong>Technologies utilisées :</strong> HTML, CSS (Media Queries, Flexbox, Grid).</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+
+</html>

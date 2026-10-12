@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Évolution Technologique</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/techno.css">
+</head>
+
+<body>
+
+    <div id="particles-js"></div>
+
+    <a href="index.html" id="back-btn" class="button2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-corner-down-left btn-icon">
+            <path d="M20 4v7a4 4 0 0 1-4 4H4" />
+            <path d="m9 10-5 5 5 5" />
+        </svg>
+        <span id="back-text">Retour à l'index</span>
+    </a>
+
+    <header class="tech-header">
+        <h1>Mon Évolution Technologique</h1>
+        <p>De mes débuts au lycée jusqu'à Epitech : ce que j'ai appris, utilisé, et surtout pourquoi.</p>
+    </header>
+
+    <main class="timeline-container">
+        <div class="timeline-progress-bar">
+            <div id="progress-line"></div>
+        </div>
+
+        <div class="timeline-stage">
+            <span class="timeline-date">2021 – 2024</span>
+            <h2>Lycée · STI2D</h2>
+            <p>Mes premiers pas : comprendre la logique, la conception et l'environnement technique avant d'écrire du
+                code complexe.</p>
+        </div>
+
+        <article class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Modélisation 3D &amp; Spés STI2D (EE, ITEC)</h3>
+                <p>Premières conceptions mécaniques et logiques. J'ai utilisé Inventor pour la modélisation 3D ainsi que
+                    diverses logiciels et outils afin de m'initier dans différents domaines pour trouver celui qui me
+                    correspondrait le mieux.</p>
+                <div class="tech-tags">
+                    <span onclick="ouvrirModalTech('Inventor')">Inventor</span>
+                    <span onclick="ouvrirModalTech('Modelisation')">Modélisation 3D</span>
+                    <span onclick="ouvrirModalTech('ITEC')">ITEC</span>
+                    <span onclick="ouvrirModalTech('Energie')">Énergie &amp; Environnement</span>
+                    <span onclick="ouvrirModalTech('Liaisons mécaniques')">Liaisons mécaniques</span>
+
+                </div>
+            </div>
+        </article>
+
+        <article class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Arduino</h3>
+                <p>Premières expériences en électronique et programmation. J'ai programmé des cartes Arduino pour
+                    piloter des capteurs (robot Mbot), ce qui m'a permis de lier le
+                    code au monde réel.</p>
+                <div class="tech-tags">
+                    <span onclick="ouvrirModalTech('Arduino')">Arduino</span>
+                    <span onclick="ouvrirModalTech('Electronique')">Électronique</span>
+                </div>
+                <a href="#" class="clic-indication" onclick="ouvrirModalTechno(event)">Cliquez ici pour afficher une
+                    image du robot Mbot</a>
+            </div>
+        </article>
+
+        <div class="timeline-stage">
+            <span class="timeline-date">2024 – 2026</span>
+            <h2>BTS CIEL</h2>
+            <p>Comprendre ce qui se passe sous le capot : du matériel au logiciel, des réseaux sécurisés aux
+                applications web.</p>
+        </div>
+
+        <article class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Programmation (Python, Java, PHP)</h3>
+                <p>Apprentissage de la rigueur avec la gestion de la mémoire (pointeurs), puis diversification avec Java
+                    et le développement web backend en PHP / Flask pour structurer des données (JSON).</p>
+                <div class="tech-tags">
+                    <span onclick="ouvrirModalTech('Python')">Python</span>
+                    <span onclick="ouvrirModalTech('Java')">Java</span>
+                    <span onclick="ouvrirModalTech('PHP')">PHP</span>
+                    <span onclick="ouvrirModalTech('Flask')">Flask</span>
+                    <span onclick="ouvrirModalTech('JSON')">JSON</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Web &amp; Design-Dynamisation</h3>
+                <p>Conception et développement de sites web dynamiques en utilisant les technologies front-end (HTML,
+                    CSS, JavaScript).</p>
+                <div class="tech-tags">
+                    <span onclick="ouvrirModalTech('html')">HTML</span>
+                    <span onclick="ouvrirModalTech('css')">CSS</span>
+                    <span onclick="ouvrirModalTech('JavaScript')">JavaScript</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Linux, Bash &amp; WSL</h3>
+                <p>Utilisation quotidienne de l'environnement Linux via WSL et le terminal pour automatiser des tâches
+                    et administrer des systèmes en ligne de commande.</p>
+                <div class="tech-tags">
+                    <span onclick="ouvrirModalTech('Linux')">Linux</span>
+                    <span onclick="ouvrirModalTech('Bash')">Bash</span>
+                    <span onclick="ouvrirModalTech('WSL')">WSL</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Réseaux &amp; Cybersécurité</h3>
+                <p>Mise en pratique de l'architecture réseau sur matériel Cisco et sécurisation des flux de données à
+                    l'aide de pare-feu Stormshield et de gestion de brokers.</p>
+                <div class="tech-tags">
+                    <span onclick="ouvrirModalTech('Cisco')">Cisco</span>
+                    <span onclick="ouvrirModalTech('Stormshield')">Stormshield</span>
+                    <span onclick="ouvrirModalTech('Broker')">Broker</span>
+                    <span onclick="ouvrirModalTech('Reseaux')">Réseaux</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>SQL &amp; SGBD</h3>
+                <p>Conception de bases de données relationnelles et écriture de requêtes SQL pour structurer et stocker
+                    efficacement les données applicatives.</p>
+                <div class="tech-tags">
+                    <span onclick="ouvrirModalTech('SQL')">SQL</span>
+                    <span onclick="ouvrirModalTech('SGBD')">SGBD</span>
+                    <span onclick="ouvrirModalTech('PostGreSQL')">PostGreSQL</span>
+                    <span onclick="ouvrirModalTech('MySQL')">MySQL</span>
+                </div>
+            </div>
+        </article>
+
+        <div class="timeline-stage">
+            <span class="timeline-date">2026 – 2029</span>
+            <h2>MSc Pro · Epitech</h2>
+            <p>Projets complets, travail en équipe, environnements avancés et développement full-stack.</p>
+        </div>
+
+        <article class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Python &amp; Environnement Avancé</h3>
+                <p>Utilisation approfondie de Python pour des projets complexes et optimisation de l'environnement de
+                    travail sous Linux / WSL.</p>
+                <div class="tech-tags">
+                    <span onclick="ouvrirModalTech('Python')">Python</span>
+                    <span onclick="ouvrirModalTech('WSL')">WSL (Avancé)</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Git &amp; GitHub</h3>
+                <p>Maîtrise du versionnage de code en équipe (branches, pull requests) pour collaborer proprement sur
+                    des projets d'envergure.</p>
+                <div class="tech-tags">
+                    <span onclick="ouvrirModalTech('Git')">Git</span>
+                    <span onclick="ouvrirModalTech('GitHub')">GitHub</span>
+                    <span onclick="ouvrirModalTech('TravailEquipe')">Travail en équipe</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>Web Full-Stack &amp; API</h3>
+                <p>Conception d'applications web de bout en bout, de l'interface front-end aux services back-end et à la
+                    consommation d'API.</p>
+                <div class="tech-tags">
+                    <span onclick="ouvrirModalTech('JavaScript')">JavaScript</span>
+                    <span onclick="ouvrirModalTech('API')">API</span>
+                    <span onclick="ouvrirModalTech('Frontend')">Front-end</span>
+                    <span onclick="ouvrirModalTech('Backend')">Back-end</span>
+                </div>
+            </div>
+        </article>
+
+        <div id="modal-tech-desc" class="modal">
+            <div class="modal-content" style="max-width: 600px; text-align: center; padding: 30px;">
+                <span class="close" onclick="fermerModalTech()">&times;</span>
+
+                <h3 id="modal-tech-title" style="color: var(--heading-color); margin-bottom: 15px; font-size: 1.5rem;">
+                    Titre</h3>
+                <p id="modal-tech-text" style="color: var(--text-color); line-height: 1.6; text-align: left;"></p>
+
+                <img id="modal-tech-img" src="" alt="Logo techno"
+                    style="width: 70px; height: 70px; object-fit: contain; margin-bottom: 15px; display: none;">
+            </div>
+        </div>
+
+        <div id="modal-techno" class="modal">
+            <div class="modal-content" style="max-width: 700px; text-align: center;">
+                <span class="close" onclick="fermerModalTechno()">&times;</span>
+                <h3>Image du robot Mbot</h3>
+                <img src="../images/robotmbot.jpg" alt="Image Mbot"
+                    style="width: 100%; height: auto; border-radius: 8px; margin-top: 15px;">
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
+    <script src="../js/techno.js"></script>
+
+</body>
+
+</html>
