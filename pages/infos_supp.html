@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activités & Infos Complémentaires</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/infos_supp.css">
+</head>
+
+<body>
+
+    <div id="particles-js"></div>
+
+    <!-- Bouton retour mis à jour avec les ID -->
+    <a href="../pages/index.html" id="back-btn" class="button2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-corner-down-left btn-icon">
+            <path d="M20 4v7a4 4 0 0 1-4 4H4" />
+            <path d="m9 10-5 5 5 5" />
+        </svg>
+        <span id="back-text">Retour à l'index</span>
+    </a>
+
+    <div class="infos-container">
+        <!-- En-tête de la page -->
+        <header class="infos-header">
+            <h1>Activités & Passions</h1>
+            <p class="subtitle">Ce qui m'anime au-delà du cursus académique</p>
+
+            <!-- Filtres de catégories -->
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">Tout voir</button>
+                <button class="filter-btn" data-filter="gaming">Gaming</button>
+                <button class="filter-btn" data-filter="sport">Sport</button>
+                <button class="filter-btn" data-filter="loisirs">Loisirs</button>
+                <button class="filter-btn" data-filter="musique">Musique</button>
+                <button class="filter-btn" data-filter="tech">Projets</button>
+                <button class="filter-btn" data-filter="veille">Veille</button>
+            </div>
+        </header>
+
+        <!-- Grille de cartes d'activités -->
+        <main class="activities-grid">
+
+            <!-- Carte 1 : Jeux Vidéo (Général) -->
+            <div class="activity-card" data-category="gaming">
+                <div class="card-badge">Gaming</div>
+                <div class="card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="20" height="12" x="2" y="6" rx="2" />
+                        <path d="M6 12h4" />
+                        <path d="M8 10v4" />
+                        <circle cx="15" cy="13" r="1" />
+                        <circle cx="18" cy="11" r="1" />
+                    </svg>
+                </div>
+                <h3>Jeux Vidéo & Stratégie</h3>
+                <p>Principale activité de loisir. Développement des réflexes, de la stratégie en équipe et du sens de la
+                    gestion de crise sous pression.</p>
+                <div class="card-tags">
+                    <span>Gaming</span>
+                    <span>Esprit d'équipe</span>
+                    <span>Réflexes</span>
+                    <span>Stratégie</span>
+                </div>
+            </div>
+
+            <!-- Carte 2 : Sport -->
+            <div class="activity-card" data-category="sport">
+                <div class="card-badge">Sport</div>
+                <div class="card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m6.5 6.5 11 11" />
+                        <path d="m21 21-1 1a2 2 0 0 1-2.83 0l-2.5-2.5a2 2 0 0 1 0-2.83l.17-.17" />
+                        <path d="m3 3 1-1a2 2 0 0 1 2.83 0l2.5 2.5a2 2 0 0 1 0 2.83l-.17.17" />
+                        <path d="M18 3 3 18" />
+                        <path d="m11.5 11.5 1 1" />
+                    </svg>
+                </div>
+                <h3>Musculation & Condition Physique</h3>
+                <p>Entraînements réguliers pour entretenir la rigueur, la discipline et le dépassement de soi. Une
+                    excellente routine pour maintenir une bonne énergie au quotidien.</p>
+                <div class="card-tags">
+                    <span>Discipline</span>
+                    <span>Rigueur</span>
+                    <span>Santé</span>
+                </div>
+            </div>
+
+            <!-- Carte 3 : Sorties entre amis -->
+            <div class="activity-card" data-category="loisirs">
+                <div class="card-badge">Loisirs</div>
+                <div class="card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                </div>
+                <h3>Sorties entre Amis</h3>
+                <p>Moments de convivialité et d'échange réguliers. Essentiel pour déconnecter après des sessions
+                    intensives de programmation, partager de bonnes expériences et entretenir un bon équilibre social.
+                </p>
+                <div class="card-tags">
+                    <span>Convivialité</span>
+                    <span>Partage</span>
+                    <span>Équilibre</span>
+                </div>
+            </div>
+
+            <!-- Carte 4 : Musique -->
+            <div class="activity-card" data-category="musique">
+                <div class="card-badge">Passions</div>
+                <div class="card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 18V5l12-2v13" />
+                        <circle cx="6" cy="18" r="3" />
+                        <circle cx="18" cy="16" r="3" />
+                    </svg>
+                </div>
+                <h3>Musique</h3>
+                <p>Un accompagnement incontournable au quotidien, que ce soit pour maintenir la concentration lors du
+                    développement web/code ou pour se détendre pendant le temps libre.</p>
+                <div class="card-tags">
+                    <span>Focus</span>
+                    <span>Détente</span>
+                    <span>Inspiration</span>
+                </div>
+            </div>
+
+            <!-- Carte 5 : Dev Perso -->
+            <div class="activity-card" data-category="tech">
+                <div class="card-badge">Projets</div>
+                <div class="card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="16 18 22 12 16 6" />
+                        <polyline points="8 6 2 12 8 18" />
+                    </svg>
+                </div>
+                <h3>Développement de Jeux & Scripts</h3>
+                <p>Conception et programmation de projets personnels en Python (jeux 2D platformer, scripts de
+                    mini-jeux). Expérimentation constante pour approfondir la logique de programmation.</p>
+                <div class="card-tags">
+                    <span>Python</span>
+                    <span>Game Dev</span>
+                    <span>Algorithmique</span>
+                </div>
+            </div>
+
+            <!-- Carte 6 : Cybersécurité / Veille -->
+            <div class="activity-card" data-category="veille">
+                <div class="card-badge">Veille</div>
+                <div class="card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                </div>
+                <h3>Réseaux & Cybersécurité</h3>
+                <p>Fort d'un cursus BTS CIEL, je réalise de la veille technique et des configurations pratiques
+                    (environnements Linux, règles de pare-feu, administration de bases de données sécurisées).</p>
+                <div class="card-tags">
+                    <span>Linux / Bash</span>
+                    <span>PostgreSQL</span>
+                    <span>Réseaux</span>
+                </div>
+            </div>
+
+            <!-- Carte : Parcours & Formation -->
+            <div class="activity-card" data-category="tech">
+                <div class="card-badge">Parcours</div>
+                <div class="card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z" />
+                        <path d="M6 6h10" />
+                        <path d="M6 10h10" />
+                    </svg>
+                </div>
+                <h3>Cursus & Évolutions</h3>
+                <p>Un parcours axé sur la technique : Bac STI2D (spécialité ITEC) obtenu avec mention assez bien, suivi
+                    d'un BTS CIEL (Cybersécurité, Informatique et Réseaux) obtenu avec 12,69 de moyenne, et désormais en
+                    Pré-MSc à Epitech.</p>
+                <div class="card-tags">
+                    <span>Epitech</span>
+                    <span>BTS CIEL</span>
+                    <span>Bac STI2D</span>
+                </div>
+            </div>
+
+            <!-- Carte : Expérience Pro / Stage -->
+            <div class="activity-card" data-category="tech">
+                <div class="card-badge">Expérience</div>
+                <div class="card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="20" height="14" x="2" y="3" rx="2" />
+                        <line x1="8" x2="16" y1="21" y2="21" />
+                        <line x1="12" x2="12" y1="17" y2="21" />
+                    </svg>
+                </div>
+                <h3>Immersion & Interface Web</h3>
+                <p>Stage de 6 semaines réalisé au sein d'une entreprise d'agro-alimentaire durant mon BTS, axé notamment
+                    sur la gestion et le développement d'une interface Web.</p>
+                <div class="card-tags">
+                    <span>Stage Web</span>
+                    <span>Agro-alimentaire</span>
+                    <span>Professionnalisation</span>
+                </div>
+            </div>
+
+            <!-- Carte : Langues & Mobilité -->
+            <div class="activity-card" data-category="sport">
+                <div class="card-badge">Atouts</div>
+                <div class="card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <path
+                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                        <path d="M2 12h20" />
+                    </svg>
+                </div>
+                <h3>Langues & Autonomie</h3>
+                <p>Maîtrise du français (langue maternelle) et bon niveau d'anglais (niveau B2) pour la veille
+                    technique. Également en possession du Permis B et d'un véhicule pour assurer une totale autonomie.
+                </p>
+                <div class="card-tags">
+                    <span>Anglais B2</span>
+                    <span>Permis B</span>
+                    <span>Autonomie</span>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
+    <script src="../js/infos_supp.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+
+</html>

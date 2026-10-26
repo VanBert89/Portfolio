@@ -63,14 +63,6 @@ h3 {
     /* Modifié */
 }
 
-.header-bio {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 30px;
-}
-
 .navbar {
     background-color: var(--nav-bg);
     padding: 15px 20px;
@@ -96,7 +88,8 @@ h3 {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--link-color); /* Utilise la variable link-color pour le même bleu dans les deux modes */
+    color: var(--link-color);
+    /* Utilise la variable link-color pour le même bleu dans les deux modes */
     font-weight: 600;
     font-size: 0.95rem;
     padding: 8px 12px;
@@ -248,48 +241,6 @@ footer address {
     }
 }
 
-@media (min-width: 768px) {
-    .header-bio {
-        flex-direction: row;
-        justify-content: space-between;
-        max-width: 800px;
-        margin: 0 auto 40px auto;
-    }
-
-    .header-bio h1 {
-        text-align: left;
-        margin: 0;
-    }
-}
-
-.conteneur-photo {
-    flex-shrink: 0;
-}
-
-.photo-profil {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    object-position: center 20%;
-    border-radius: 50%;
-    border: 3px solid #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.bio-content {
-    max-width: 800px;
-    margin: 0 auto;
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    text-align: justify;
-}
-
-.bio-content p {
-    margin: 0;
-}
-
 .button-container {
     text-align: center;
     margin-top: 40px;
@@ -319,35 +270,35 @@ footer address {
     top: 20px;
     left: 20px;
     display: inline-block;
-    padding: 8px 12px; 
+    padding: 8px 12px;
     border: none;
-    border-radius: 6px; 
-    font-size: 0.95rem;     
-    font-weight: 600; 
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s ease; 
+    transition: all 0.2s ease;
     text-decoration: none;
-    color: var(--text-color); 
-    background-color: var(--nav-bg); 
+    color: var(--text-color);
+    background-color: var(--nav-bg);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     z-index: 10;
     border: 1px solid var(--border-color);
 }
 
 .button2:hover {
-    color: var(--link-color); 
-    background-color: rgba(0, 42, 153, 0.05); 
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08); 
+    color: var(--link-color);
+    background-color: rgba(0, 42, 153, 0.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
     transform: translateY(-2px);
-    opacity: 1; 
+    opacity: 1;
     border-color: var(--link-color);
 }
 
 /* Survol spécifique en Mode Sombre */
 html.dark-mode .button2:hover {
-    color: #00ffcc !important; 
-    background-color: var(--nav-bg) !important; 
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); 
+    color: #00ffcc !important;
+    background-color: var(--nav-bg) !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     transform: translateY(-2px);
     border-color: #00ffcc !important;
 }
@@ -406,7 +357,6 @@ html.dark-mode .button2:hover {
     position: relative;
 }
 
-.bio-content,
 .form-contact,
 .form-wrapper {
     background: var(--card-bg-light);
@@ -1092,16 +1042,14 @@ html.dark-mode .button2:hover {
 }
 
 html.dark-mode .form-wrapper,
-html.dark-mode .form-contact,
-html.dark-mode .bio-content {
+html.dark-mode .form-contact {
     background: var(--card-bg-light) !important;
     color: var(--text-color) !important;
     border: 1px solid var(--border-color) !important;
 }
 
 html.dark-mode .form-wrapper,
-html.dark-mode .form-contact,
-html.dark-mode .bio-content {
+html.dark-mode .form-contact {
     background-color: #1e1e1e !important;
     background: #1e1e1e !important;
     color: #f3f4f6 !important;
