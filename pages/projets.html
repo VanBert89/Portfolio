@@ -2,148 +2,201 @@
 <html lang="fr">
 
 <head>
-    <script>
-        if (localStorage.getItem('theme') === 'dark') {
-            document.documentElement.classList.add('dark-mode');
-        }
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mes Projets</title>
+    <title>Projets – Ewann Bertrand, développeur web (PHP, SQL, Python)</title>
+    <meta name="description" content="Projets d'Ewann Bertrand : interfaces web de gestion d'inventaire et de personnel en PHP/SQL, jeu Python en ligne de commande et portfolio responsive.">
+    <meta name="author" content="Ewann Bertrand">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://vanbert89.github.io/Portfolio/pages/projets.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Portfolio d'Ewann Bertrand">
+    <meta property="og:title" content="Projets – Ewann Bertrand, développeur web (PHP, SQL, Python)">
+    <meta property="og:description" content="Projets d'Ewann Bertrand : interfaces web de gestion d'inventaire et de personnel en PHP/SQL, jeu Python en ligne de commande et portfolio responsive.">
+    <meta property="og:url" content="https://vanbert89.github.io/Portfolio/pages/projets.html">
+    <meta property="og:image" content="https://vanbert89.github.io/Portfolio/images/photo-ewann.webp">
+    <meta name="twitter:card" content="summary">
+    <meta name="theme-color" content="#f6f8fb" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)">
+    <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+    <script>
+        (function () {
+            var t = null;
+            try { t = localStorage.getItem('theme'); } catch (e) { }
+            if (t !== 'dark' && t !== 'light') {
+                t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.dataset.theme = t;
+            document.documentElement.classList.add('js');
+        })();
+    </script>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/projets.css">
 </head>
 
 <body>
+    <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+    <div id="particles-js" aria-hidden="true"></div>
 
-    <div id="particles-js"></div>
+    <header class="site-header">
+        <nav class="navbar container" aria-label="Navigation principale">
+            <a class="brand" href="../index.html">Ewann<span>Bertrand</span></a>
 
-    <a href="../pages/index.html" id="back-btn" class="button2">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-corner-down-left btn-icon">
-            <path d="M20 4v7a4 4 0 0 1-4 4H4" />
-            <path d="m9 10-5 5 5 5" />
-        </svg>
-        <span id="back-text">Retour à l'index</span>
-    </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu"
+                aria-label="Ouvrir le menu">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
 
-    <section id="projets" class="projets-section">
-        <div class="container-projets">
-            <h1>Mes Projets</h1>
-            <p class="subtitle">Retrouvez ici une sélection de mes réalisations et projets de développement.</p>
+            <ul class="nav-links" id="menu">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="biographie.html">Biographie</a></li>
+                <li><a href="projets.html" aria-current="page">Projets</a></li>
+                <li><a href="parcours.html">Parcours</a></li>
+                <li><a href="technologies.html">Technologies</a></li>
+                <li><a href="informations.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
 
-            <div class="projets-grid">
+            <button class="theme-toggle" type="button" aria-label="Activer le thème sombre">
+                <svg class="icon icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                <svg class="icon icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            </button>
+        </nav>
+    </header>
 
-                <div class="projet-card" onclick="ouvrirModal('modal-premiersite')">
-                    <h3>Premier Site</h3>
-                    <p>Développement d'un site WEB sur le sujet de notre choix.</p>
-                    <span class="clic-indication">Cliquez pour en savoir plus +</span>
-                </div>
+    <main id="contenu" class="site-main">
+        <section class="container section" aria-labelledby="projets-titre">
+            <header class="page-header">
+                <p class="eyebrow">Réalisations</p>
+                <h1 id="projets-titre">Mes projets</h1>
+                <p class="lead">Une sélection de mes réalisations et projets de développement, en formation et en
+                    entreprise.</p>
+            </header>
 
-                <div class="projet-card" onclick="ouvrirModal('modal-zelda')">
-                    <h3>Jeu Zelda (Python)</h3>
-                    <p>Développement d'un script en Python interactif en ligne de commande.</p>
-                    <span class="clic-indication">Cliquez pour en savoir plus +</span>
-                </div>
+            <ul class="card-grid">
+                <li class="card projet-card">
+                    <h2>Premier site web</h2>
+                    <p>Développement d'un site web sur le sujet de mon choix.</p>
+                    <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+                    <button type="button" class="btn btn-ghost" data-open-dialog="modal-premiersite">En savoir plus
+                        <span class="sr-only">sur le projet « Premier site web »</span></button>
+                </li>
+                <li class="card projet-card">
+                    <h2>Jeu Zelda en Python</h2>
+                    <p>Script Python interactif en ligne de commande.</p>
+                    <ul class="tags"><li>Python</li></ul>
+                    <button type="button" class="btn btn-ghost" data-open-dialog="modal-zelda">En savoir plus
+                        <span class="sr-only">sur le projet « Jeu Zelda en Python »</span></button>
+                </li>
+                <li class="card projet-card">
+                    <h2>Interface de gestion d'inventaire</h2>
+                    <p>Application web de gestion du matériel informatique d'une entreprise.</p>
+                    <ul class="tags"><li>HTML</li><li>PHP</li><li>SQL</li><li>CSS</li><li>JavaScript</li></ul>
+                    <button type="button" class="btn btn-ghost" data-open-dialog="modal-inventaire">En savoir plus
+                        <span class="sr-only">sur le projet « Interface de gestion d'inventaire »</span></button>
+                </li>
+                <li class="card projet-card">
+                    <h2>Interface de gestion du personnel</h2>
+                    <p>Application web de gestion des employés d'une entreprise.</p>
+                    <ul class="tags"><li>HTML</li><li>PHP</li><li>SQL</li><li>CSS</li><li>JavaScript</li></ul>
+                    <button type="button" class="btn btn-ghost" data-open-dialog="modal-personnel">En savoir plus
+                        <span class="sr-only">sur le projet « Interface de gestion du personnel »</span></button>
+                </li>
+                <li class="card projet-card">
+                    <h2>Portfolio web</h2>
+                    <p>Ce site : un portfolio personnel responsive et accessible.</p>
+                    <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>GitHub Actions</li></ul>
+                    <button type="button" class="btn btn-ghost" data-open-dialog="modal-portfolio">En savoir plus
+                        <span class="sr-only">sur le projet « Portfolio web »</span></button>
+                </li>
+            </ul>
+        </section>
 
-                <div class="projet-card" onclick="ouvrirModal('modal-siteinventaire')">
-                    <h3>Interface de gestion d'inventaire</h3>
-                    <p>Développement d'une interface WEB de gestion d'inventaire de matériel informatique.</p>
-                    <span class="clic-indication">Cliquez pour en savoir plus +</span>
-                </div>
+        <dialog id="modal-premiersite" class="modal" aria-labelledby="modal-premiersite-titre">
+            <button type="button" class="modal-close" data-close-dialog aria-label="Fermer"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+            <h2 id="modal-premiersite-titre">Premier site web</h2>
+            <p>Ce projet était mon premier projet individuel en BTS : réaliser un petit site (en local) en HTML sur le sujet de mon choix. C'était ma toute première expérience avec le HTML.</p>
+            <h3>Technologies utilisées</h3>
+            <ul>
+                <li><strong>HTML</strong> : structure des pages</li>
+                <li><strong>CSS</strong> : design et mise en forme</li>
+                <li><strong>JavaScript</strong> : quiz et interactions</li>
+            </ul>
+        </dialog>
+        <dialog id="modal-zelda" class="modal" aria-labelledby="modal-zelda-titre">
+            <button type="button" class="modal-close" data-close-dialog aria-label="Fermer"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+            <h2 id="modal-zelda-titre">Jeu Zelda en Python</h2>
+            <p>Création complète d'un script interactif en Python (« Jeu_Zelda.py ») réalisé en équipe. Il gère les déplacements, des combats textuels, divers événements et un système de sauvegarde / redémarrage, directement depuis le terminal.</p>
+            <h3>Technologies utilisées</h3>
+            <ul>
+                <li><strong>Python</strong> : modules natifs, conditions, boucles, gestion des entrées utilisateur</li>
+            </ul>
+        </dialog>
+        <dialog id="modal-inventaire" class="modal" aria-labelledby="modal-inventaire-titre">
+            <button type="button" class="modal-close" data-close-dialog aria-label="Fermer"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+            <h2 id="modal-inventaire-titre">Interface de gestion d'inventaire</h2>
+            <p>En stage, mes responsables m'ont confié le développement d'une interface de gestion de leur matériel informatique. À mon arrivée, ils n'avaient qu'un fichier CSV (Excel) ; ils disposent désormais d'une interface fluide et ergonomique reliée à une base de données.</p>
+            <p>Ce projet m'a permis de valider mon passage en deuxième année de BTS.</p>
+            <h3>Technologies utilisées</h3>
+            <ul>
+                <li><strong>HTML</strong> : interface</li>
+                <li><strong>PHP</strong> : lien entre l'interface et la base de données</li>
+                <li><strong>SQL</strong> : base de données</li>
+                <li><strong>CSS</strong> : design</li>
+                <li><strong>JavaScript</strong> : fonctionnalités et affichage</li>
+            </ul>
+        </dialog>
+        <dialog id="modal-personnel" class="modal" aria-labelledby="modal-personnel-titre">
+            <button type="button" class="modal-close" data-close-dialog aria-label="Fermer"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+            <h2 id="modal-personnel-titre">Interface de gestion du personnel</h2>
+            <p>En intérim dans la même entreprise, j'ai développé une interface de gestion de l'ensemble du personnel. Le principe est proche de l'interface d'inventaire ; les différences portent sur les tables, les requêtes SQL et l'optimisation de l'ergonomie.</p>
+            <p>L'entreprise m'a gardé quatre semaines supplémentaires après mon stage pour mener à bien ce projet.</p>
+            <h3>Technologies utilisées</h3>
+            <ul>
+                <li><strong>HTML</strong> : interface</li>
+                <li><strong>PHP</strong> : lien avec la base de données</li>
+                <li><strong>SQL</strong> : requêtes optimisées</li>
+                <li><strong>CSS</strong> : design</li>
+                <li><strong>JavaScript</strong> : fonctionnalités</li>
+            </ul>
+        </dialog>
+        <dialog id="modal-portfolio" class="modal" aria-labelledby="modal-portfolio-titre">
+            <button type="button" class="modal-close" data-close-dialog aria-label="Fermer"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+            <h2 id="modal-portfolio-titre">Portfolio web</h2>
+            <p>Conception de ce site personnel, entièrement responsive, avec un thème clair / sombre, une structure sémantique, de bonnes pratiques SEO et un déploiement automatisé sur GitHub Pages via GitHub Actions.</p>
+            <h3>Technologies utilisées</h3>
+            <ul>
+                <li><strong>HTML</strong> : structure sémantique</li>
+                <li><strong>CSS</strong> : Grid, Flexbox, media queries, variables</li>
+                <li><strong>JavaScript</strong> : thème, menu, modales</li>
+                <li><strong>GitHub Actions</strong> : validation et déploiement automatiques</li>
+            </ul>
+        </dialog>
+    </main>
 
-                <div class="projet-card" onclick="ouvrirModal('modal-sitepersonnel')">
-                    <h3>Interface de gestion de personnel</h3>
-                    <p>Développement d'une interface WEB de gestion de personnel.</p>
-                    <span class="clic-indication">Cliquez pour en savoir plus +</span>
-                </div>
-
-                <div class="projet-card" onclick="ouvrirModal('modal-portfolio')">
-                    <h3>Portfolio Web</h3>
-                    <p>Création d'un site web personnel responsive en HTML, CSS et Flexbox.</p>
-                    <span class="clic-indication">Cliquez pour en savoir plus +</span>
-                </div>
-
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-id">
+                <p class="footer-name">Ewann Bertrand</p>
+                <address>Toulouse, France — Étudiant à Epitech</address>
+            </div>
+            <ul class="footer-links">
+                <li><a href="https://github.com/VanBert89" rel="noopener" target="_blank">GitHub<span class="sr-only"> (nouvel onglet)</span></a></li>
+                <li><a href="https://www.linkedin.com/in/ewann-bertrand-2447333bb/" rel="noopener" target="_blank">LinkedIn<span class="sr-only"> (nouvel onglet)</span></a></li>
+                <li><a href="credits.html">Crédits &amp; mentions</a></li>
+            </ul>
+            <div class="footer-end">
+                <a href="https://www.epitech.eu/" class="footer-epitech" rel="noopener" target="_blank">
+                    <img src="../images/logo-epitech.png" alt="Epitech, mon école actuelle (nouvel onglet)" width="198" height="48" loading="lazy">
+                </a>
+                <p class="copy">&copy; 2026 Ewann Bertrand</p>
             </div>
         </div>
-    </section>
+    </footer>
 
-    <div id="modal-premiersite" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="fermerModal('modal-premiersite')">&times;</span>
-            <h2>Premier Site</h2>
-            <p><strong>Description détaillée :</strong></p>
-            <p>Ce projet était mon 1er projet individuel à effectuer dans mon BTS. On devait faire un petit site (local)
-                en HTML sur le sujet de mon choix. C'était ma vraie première expérience avec le HTML.
-            </p>
-            <p><strong>Technologies utilisées :</strong> HTML (Création du front-end du site), CSS (Design et mise en
-                forme) et JS (Quiz et interactions avec l'utilisateur).</p>
-        </div>
-    </div>
-
-    <div id="modal-zelda" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="fermerModal('modal-zelda')">&times;</span>
-            <h2>Jeu Zelda (Python)</h2>
-            <p><strong>Description détaillée :</strong></p>
-            <p>Ce projet consiste en la création complète d'un script interactif en Python (nommé "Jeu_Zelda.py"). Il
-                gère les déplacements, des combats textuels, et un système de sauvegarde/redémarrage directement depuis
-                le terminal en ligne de commande. Ceci était un projet en coopération de création d'un jeu interactif,
-                diverses évènements et plusieurs fonctionnalités.</p>
-            <p><strong>Technologies utilisées :</strong> Python (modules natifs, structures conditionnelles, boucles et
-                gestion des entrées utilisateur).</p>
-        </div>
-    </div>
-
-    <div id="modal-siteinventaire" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="fermerModal('modal-siteinventaire')">&times;</span>
-            <h2>Interface de gestion d'inventaire</h2>
-            <p><strong>Description détaillée :</strong></p>
-            <p>En tant que stagiaire dans une entreprise, mes responsables m'ont confié la tâche de développer une
-                interface de gestion de leur matériel informatique. Lorsque je suis arrivé, ils avaient juste un fichier
-                .csv (excel) contenant les matériels, et maintenant grâce à mon passage ils ont une interface fluide et
-                ergonomique pour renseigner un matériel dans leur Base De Données. Ce projet m'a permis de passer en
-                2ème année de BTS.
-
-            </p>
-            <p><strong>Technologies utilisées :</strong> HTML (Création du front-end du site), PHP (Mise en relation
-                entre l'interface et la BDD), CSS (Design et mise en forme) et JS (Fonctionnalités et affichage).</p>
-        </div>
-    </div>
-
-    <div id="modal-sitepersonnel" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="fermerModal('modal-sitepersonnel')">&times;</span>
-            <h2>Interface de gestion de personnel</h2>
-            <p><strong>Description détaillée :</strong></p>
-            <p>En tant qu'intérimaire dans la même entreprise que le projet précedent, mes responsables m'ont confié la
-                tâche de développer une interface de gestion de l'ensemble du personnel présent dans l'entreprise.
-                Ceci étant presque le même principe que pour l'autre interface, ce qui différait était juste les
-                requêtes SQL, les tables et l'optimisation sur l'interface. Globalement, les deux se ressemblent
-                beaucoup. L'entreprise m'a gardé quatre semaines de plus après mon stage pour pouvoir effectuer cette
-                tâche et renforcer mon expérience dans le domaine.
-
-            </p>
-            <p><strong>Technologies utilisées :</strong> HTML (Création du front-end du site), PHP (Mise en relation
-                entre l'interface et la BDD), CSS (Design et mise en forme) et JS (Fonctionnalités et affichage).</p>
-        </div>
-    </div>
-
-    <div id="modal-portfolio" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="fermerModal('modal-portfolio')">&times;</span>
-            <h2>Portfolio Web</h2>
-            <p><strong>Description détaillée :</strong></p>
-            <p>Conception d'un site web personnel entièrement responsive. L'objectif était de structurer un portfolio
-                moderne en utilisant HTML, CSS, les grilles et Flexbox, tout en assurant une compatibilité parfaite
-                entre les écrans de PC et de smartphones.</p>
-            <p><strong>Technologies utilisées :</strong> HTML, CSS (Media Queries, Flexbox, Grid).</p>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
-    <script src="../js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js" defer></script>
+    <script src="../js/app.js" defer></script>
 </body>
 
 </html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technologies – Compétences d'Ewann Bertrand (HTML, PHP, SQL, Python…)</title>
+    <meta name="description" content="Frise interactive des technologies maîtrisées par Ewann Bertrand : HTML, CSS, JavaScript, PHP, SQL, Python, Java, Linux, réseaux Cisco et Git.">
+    <meta name="author" content="Ewann Bertrand">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://vanbert89.github.io/Portfolio/pages/technologies.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Portfolio d'Ewann Bertrand">
+    <meta property="og:title" content="Technologies – Compétences d'Ewann Bertrand (HTML, PHP, SQL, Python…)">
+    <meta property="og:description" content="Frise interactive des technologies maîtrisées par Ewann Bertrand : HTML, CSS, JavaScript, PHP, SQL, Python, Java, Linux, réseaux Cisco et Git.">
+    <meta property="og:url" content="https://vanbert89.github.io/Portfolio/pages/technologies.html">
+    <meta property="og:image" content="https://vanbert89.github.io/Portfolio/images/photo-ewann.webp">
+    <meta name="twitter:card" content="summary">
+    <meta name="theme-color" content="#f6f8fb" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)">
+    <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+    <script>
+        (function () {
+            var t = null;
+            try { t = localStorage.getItem('theme'); } catch (e) { }
+            if (t !== 'dark' && t !== 'light') {
+                t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.dataset.theme = t;
+            document.documentElement.classList.add('js');
+        })();
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/technologies.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+    <div id="particles-js" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <nav class="navbar container" aria-label="Navigation principale">
+            <a class="brand" href="../index.html">Ewann<span>Bertrand</span></a>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu"
+                aria-label="Ouvrir le menu">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
+
+            <ul class="nav-links" id="menu">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="biographie.html">Biographie</a></li>
+                <li><a href="projets.html">Projets</a></li>
+                <li><a href="parcours.html">Parcours</a></li>
+                <li><a href="technologies.html" aria-current="page">Technologies</a></li>
+                <li><a href="informations.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <button class="theme-toggle" type="button" aria-label="Activer le thème sombre">
+                <svg class="icon icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                <svg class="icon icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            </button>
+        </nav>
+    </header>
+
+    <main id="contenu" class="site-main">
+        <section class="container section" aria-labelledby="tech-titre">
+            <header class="page-header">
+                <p class="eyebrow">Compétences</p>
+                <h1 id="tech-titre">Mon évolution technologique</h1>
+                <p class="lead">Du lycée à Epitech : ce que j'ai appris, utilisé, et surtout pourquoi. Cliquez sur une
+                    technologie pour en savoir plus.</p>
+            </header>
+
+            <div class="tl">
+                <div class="tl-track" aria-hidden="true"><div class="tl-progress"></div></div>
+                <ol class="tl-list">
+            <li class="tl-stage">
+                <p class="step-date">2021 – 2024</p>
+                <h2>Lycée · STI2D</h2>
+                <p>Mes premiers pas : comprendre la logique, la conception et l'environnement technique avant d'écrire du code complexe.</p>
+            </li>
+            <li class="tl-item tl-left">
+                <span class="tl-dot" aria-hidden="true"></span>
+                <article class="tl-card">
+                    <h3>Modélisation 3D &amp; spécialités STI2D (EE, ITEC)</h3>
+                    <p>Premières conceptions mécaniques et logiques. J'ai utilisé Inventor pour la modélisation 3D ainsi que divers logiciels et outils pour m'initier à différents domaines et trouver celui qui me correspondait le mieux.</p>
+                    <ul class="tech-tags">
+                        <li><button type="button" data-tech="Inventor">Inventor</button></li>
+                        <li><button type="button" data-tech="Modelisation">Modélisation 3D</button></li>
+                        <li><button type="button" data-tech="ITEC">ITEC</button></li>
+                        <li><button type="button" data-tech="Energie">Énergie &amp; Environnement</button></li>
+                        <li><button type="button" data-tech="Liaisons">Liaisons mécaniques</button></li>
+                    </ul>
+                </article>
+            </li>
+            <li class="tl-item tl-right">
+                <span class="tl-dot" aria-hidden="true"></span>
+                <article class="tl-card">
+                    <h3>Arduino</h3>
+                    <p>Premières expériences en électronique et en programmation : j'ai programmé des cartes Arduino pour piloter les capteurs d'un robot mBot, ce qui m'a permis de lier le code au monde réel.</p>
+                    <ul class="tech-tags">
+                        <li><button type="button" data-tech="Arduino">Arduino</button></li>
+                        <li><button type="button" data-tech="Electronique">Électronique</button></li>
+                    </ul>
+                    <button type="button" class="link-btn" data-open-dialog="modal-robot">Voir une photo du robot mBot</button>
+                </article>
+            </li>
+            <li class="tl-stage">
+                <p class="step-date">2024 – 2026</p>
+                <h2>BTS CIEL</h2>
+                <p>Comprendre ce qui se passe sous le capot : du matériel au logiciel, des réseaux sécurisés aux applications web.</p>
+            </li>
+            <li class="tl-item tl-left">
+                <span class="tl-dot" aria-hidden="true"></span>
+                <article class="tl-card">
+                    <h3>Programmation (Python, Java, PHP)</h3>
+                    <p>Apprentissage de la rigueur en programmation, puis diversification avec Java et le développement web back-end en PHP et Flask pour structurer des données (JSON).</p>
+                    <ul class="tech-tags">
+                        <li><button type="button" data-tech="Python">Python</button></li>
+                        <li><button type="button" data-tech="Java">Java</button></li>
+                        <li><button type="button" data-tech="PHP">PHP</button></li>
+                        <li><button type="button" data-tech="Flask">Flask</button></li>
+                        <li><button type="button" data-tech="JSON">JSON</button></li>
+                    </ul>
+                </article>
+            </li>
+            <li class="tl-item tl-right">
+                <span class="tl-dot" aria-hidden="true"></span>
+                <article class="tl-card">
+                    <h3>Web &amp; design dynamique</h3>
+                    <p>Conception et développement de sites web dynamiques avec les technologies front-end.</p>
+                    <ul class="tech-tags">
+                        <li><button type="button" data-tech="HTML">HTML</button></li>
+                        <li><button type="button" data-tech="CSS">CSS</button></li>
+                        <li><button type="button" data-tech="JavaScript">JavaScript</button></li>
+                    </ul>
+                </article>
+            </li>
+            <li class="tl-item tl-left">
+                <span class="tl-dot" aria-hidden="true"></span>
+                <article class="tl-card">
+                    <h3>Linux, Bash &amp; WSL</h3>
+                    <p>Utilisation quotidienne de Linux via WSL et le terminal pour automatiser des tâches et administrer des systèmes en ligne de commande.</p>
+                    <ul class="tech-tags">
+                        <li><button type="button" data-tech="Linux">Linux</button></li>
+                        <li><button type="button" data-tech="Bash">Bash</button></li>
+                        <li><button type="button" data-tech="WSL">WSL</button></li>
+                    </ul>
+                </article>
+            </li>
+            <li class="tl-item tl-right">
+                <span class="tl-dot" aria-hidden="true"></span>
+                <article class="tl-card">
+                    <h3>Réseaux &amp; cybersécurité</h3>
+                    <p>Mise en pratique de l'architecture réseau sur matériel Cisco et sécurisation des flux de données avec des pare-feu Stormshield et des brokers de messages.</p>
+                    <ul class="tech-tags">
+                        <li><button type="button" data-tech="Cisco">Cisco</button></li>
+                        <li><button type="button" data-tech="Stormshield">Stormshield</button></li>
+                        <li><button type="button" data-tech="Broker">Broker</button></li>
+                        <li><button type="button" data-tech="Reseaux">Réseaux</button></li>
+                    </ul>
+                </article>
+            </li>
+            <li class="tl-item tl-left">
+                <span class="tl-dot" aria-hidden="true"></span>
+                <article class="tl-card">
+                    <h3>SQL &amp; SGBD</h3>
+                    <p>Conception de bases de données relationnelles et écriture de requêtes SQL pour structurer et stocker efficacement les données applicatives.</p>
+                    <ul class="tech-tags">
+                        <li><button type="button" data-tech="SQL">SQL</button></li>
+                        <li><button type="button" data-tech="SGBD">SGBD</button></li>
+                        <li><button type="button" data-tech="PostgreSQL">PostgreSQL</button></li>
+                        <li><button type="button" data-tech="MySQL">MySQL</button></li>
+                    </ul>
+                </article>
+            </li>
+            <li class="tl-stage">
+                <p class="step-date">2026 – 2029</p>
+                <h2>Epitech</h2>
+                <p>Projets complets, travail en équipe, environnements avancés et développement full-stack.</p>
+            </li>
+            <li class="tl-item tl-right">
+                <span class="tl-dot" aria-hidden="true"></span>
+                <article class="tl-card">
+                    <h3>Python &amp; environnement avancé</h3>
+                    <p>Utilisation approfondie de Python pour des projets complexes et optimisation de l'environnement de travail sous Linux / WSL.</p>
+                    <ul class="tech-tags">
+                        <li><button type="button" data-tech="Python">Python</button></li>
+                        <li><button type="button" data-tech="WSL">WSL (avancé)</button></li>
+                    </ul>
+                </article>
+            </li>
+            <li class="tl-item tl-left">
+                <span class="tl-dot" aria-hidden="true"></span>
+                <article class="tl-card">
+                    <h3>Git &amp; GitHub</h3>
+                    <p>Versionnage du code en équipe (branches, pull requests) pour collaborer proprement sur des projets d'envergure.</p>
+                    <ul class="tech-tags">
+                        <li><button type="button" data-tech="Git">Git</button></li>
+                        <li><button type="button" data-tech="GitHub">GitHub</button></li>
+                        <li><button type="button" data-tech="Equipe">Travail en équipe</button></li>
+                    </ul>
+                </article>
+            </li>
+            <li class="tl-item tl-right">
+                <span class="tl-dot" aria-hidden="true"></span>
+                <article class="tl-card">
+                    <h3>Web full-stack &amp; API</h3>
+                    <p>Conception d'applications web de bout en bout, de l'interface front-end aux services back-end et à la consommation d'API.</p>
+                    <ul class="tech-tags">
+                        <li><button type="button" data-tech="JavaScript">JavaScript</button></li>
+                        <li><button type="button" data-tech="API">API</button></li>
+                        <li><button type="button" data-tech="Frontend">Front-end</button></li>
+                        <li><button type="button" data-tech="Backend">Back-end</button></li>
+                    </ul>
+                </article>
+            </li>
+                </ol>
+            </div>
+        </section>
+
+        <dialog id="modal-tech" class="modal" aria-labelledby="modal-tech-titre">
+            <button type="button" class="modal-close" data-close-dialog aria-label="Fermer"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+            <img id="modal-tech-img" class="tech-logo" src="data:," alt="" width="72" height="72" hidden>
+            <h2 id="modal-tech-titre">Technologie</h2>
+            <p id="modal-tech-texte"></p>
+        </dialog>
+
+        <dialog id="modal-robot" class="modal modal-wide" aria-labelledby="modal-robot-titre">
+            <button type="button" class="modal-close" data-close-dialog aria-label="Fermer"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+            <h2 id="modal-robot-titre">Le robot mBot</h2>
+            <img src="../images/robot-mbot.webp" alt="Robot éducatif mBot bleu équipé de capteurs, programmé avec Arduino"
+                width="640" height="427" loading="lazy" class="modal-img">
+        </dialog>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-id">
+                <p class="footer-name">Ewann Bertrand</p>
+                <address>Toulouse, France — Étudiant à Epitech</address>
+            </div>
+            <ul class="footer-links">
+                <li><a href="https://github.com/VanBert89" rel="noopener" target="_blank">GitHub<span class="sr-only"> (nouvel onglet)</span></a></li>
+                <li><a href="https://www.linkedin.com/in/ewann-bertrand-2447333bb/" rel="noopener" target="_blank">LinkedIn<span class="sr-only"> (nouvel onglet)</span></a></li>
+                <li><a href="credits.html">Crédits &amp; mentions</a></li>
+            </ul>
+            <div class="footer-end">
+                <a href="https://www.epitech.eu/" class="footer-epitech" rel="noopener" target="_blank">
+                    <img src="../images/logo-epitech.png" alt="Epitech, mon école actuelle (nouvel onglet)" width="198" height="48" loading="lazy">
+                </a>
+                <p class="copy">&copy; 2026 Ewann Bertrand</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js" defer></script>
+    <script src="../js/app.js" defer></script>
+    <script src="../js/technologies.js" defer></script>
+</body>
+
+</html>

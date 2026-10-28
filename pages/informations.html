@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activités et passions – Ewann Bertrand</title>
+    <meta name="description" content="Activités, passions et atouts d'Ewann Bertrand : sport, gaming, musique, projets Python, veille cybersécurité, anglais B2 et permis B.">
+    <meta name="author" content="Ewann Bertrand">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://vanbert89.github.io/Portfolio/pages/informations.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Portfolio d'Ewann Bertrand">
+    <meta property="og:title" content="Activités et passions – Ewann Bertrand">
+    <meta property="og:description" content="Activités, passions et atouts d'Ewann Bertrand : sport, gaming, musique, projets Python, veille cybersécurité, anglais B2 et permis B.">
+    <meta property="og:url" content="https://vanbert89.github.io/Portfolio/pages/informations.html">
+    <meta property="og:image" content="https://vanbert89.github.io/Portfolio/images/photo-ewann.webp">
+    <meta name="twitter:card" content="summary">
+    <meta name="theme-color" content="#f6f8fb" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)">
+    <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+    <script>
+        (function () {
+            var t = null;
+            try { t = localStorage.getItem('theme'); } catch (e) { }
+            if (t !== 'dark' && t !== 'light') {
+                t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.dataset.theme = t;
+            document.documentElement.classList.add('js');
+        })();
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/informations.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+    <div id="particles-js" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <nav class="navbar container" aria-label="Navigation principale">
+            <a class="brand" href="../index.html">Ewann<span>Bertrand</span></a>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu"
+                aria-label="Ouvrir le menu">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
+
+            <ul class="nav-links" id="menu">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="biographie.html">Biographie</a></li>
+                <li><a href="projets.html">Projets</a></li>
+                <li><a href="parcours.html">Parcours</a></li>
+                <li><a href="technologies.html">Technologies</a></li>
+                <li><a href="informations.html" aria-current="page">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <button class="theme-toggle" type="button" aria-label="Activer le thème sombre">
+                <svg class="icon icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                <svg class="icon icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            </button>
+        </nav>
+    </header>
+
+    <main id="contenu" class="site-main">
+        <section class="container section" aria-labelledby="infos-titre">
+            <header class="page-header">
+                <p class="eyebrow">À propos de moi</p>
+                <h1 id="infos-titre">Activités &amp; passions</h1>
+                <p class="lead">Ce qui m'anime au-delà du cursus académique.</p>
+            </header>
+
+            <div class="filter-bar" role="group" aria-label="Filtrer les activités par catégorie">
+                <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">Tout voir</button>
+                <button type="button" class="filter-btn" data-filter="gaming" aria-pressed="false">Gaming</button>
+                <button type="button" class="filter-btn" data-filter="sport" aria-pressed="false">Sport</button>
+                <button type="button" class="filter-btn" data-filter="loisirs" aria-pressed="false">Loisirs</button>
+                <button type="button" class="filter-btn" data-filter="musique" aria-pressed="false">Musique</button>
+                <button type="button" class="filter-btn" data-filter="tech" aria-pressed="false">Projets</button>
+                <button type="button" class="filter-btn" data-filter="veille" aria-pressed="false">Veille</button>
+                <button type="button" class="filter-btn" data-filter="parcours" aria-pressed="false">Parcours &amp; atouts</button>
+            </div>
+            <p class="sr-only" role="status" id="filter-status"></p>
+
+            <ul class="card-grid activities-grid">
+                <li class="card activity-card" data-category="gaming">
+                    <span class="card-badge">Gaming</span>
+                    <div class="card-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="12" x="2" y="6" rx="2"/><path d="M6 12h4"/><path d="M8 10v4"/><circle cx="15" cy="13" r="1"/><circle cx="18" cy="11" r="1"/></svg></div>
+                    <h2>Jeux vidéo &amp; stratégie</h2>
+                    <p>Principale activité de loisir. Développement des réflexes, de la stratégie en équipe et du sens de la gestion de crise sous pression.</p>
+                    <ul class="tags"><li>Gaming</li><li>Esprit d'équipe</li><li>Réflexes</li><li>Stratégie</li></ul>
+                </li>
+                <li class="card activity-card" data-category="sport">
+                    <span class="card-badge">Sport</span>
+                    <div class="card-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6.5 6.5 11 11"/><path d="m21 21-1 1a2 2 0 0 1-2.83 0l-2.5-2.5a2 2 0 0 1 0-2.83l.17-.17"/><path d="m3 3 1-1a2 2 0 0 1 2.83 0l2.5 2.5a2 2 0 0 1 0 2.83l-.17.17"/><path d="M18 3 3 18"/><path d="m11.5 11.5 1 1"/></svg></div>
+                    <h2>Musculation &amp; condition physique</h2>
+                    <p>Entraînements réguliers pour entretenir la rigueur, la discipline et le dépassement de soi. Une excellente routine pour maintenir une bonne énergie au quotidien.</p>
+                    <ul class="tags"><li>Discipline</li><li>Rigueur</li><li>Santé</li></ul>
+                </li>
+                <li class="card activity-card" data-category="loisirs">
+                    <span class="card-badge">Loisirs</span>
+                    <div class="card-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                    <h2>Sorties entre amis</h2>
+                    <p>Moments de convivialité et d'échange réguliers. Essentiel pour déconnecter après des sessions intensives de programmation, partager de bonnes expériences et garder un bon équilibre social.</p>
+                    <ul class="tags"><li>Convivialité</li><li>Partage</li><li>Équilibre</li></ul>
+                </li>
+                <li class="card activity-card" data-category="musique">
+                    <span class="card-badge">Passions</span>
+                    <div class="card-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
+                    <h2>Musique</h2>
+                    <p>Un accompagnement incontournable au quotidien, que ce soit pour rester concentré pendant le développement ou pour se détendre pendant le temps libre.</p>
+                    <ul class="tags"><li>Focus</li><li>Détente</li><li>Inspiration</li></ul>
+                </li>
+                <li class="card activity-card" data-category="tech">
+                    <span class="card-badge">Projets</span>
+                    <div class="card-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+                    <h2>Développement de jeux &amp; scripts</h2>
+                    <p>Conception et programmation de projets personnels en Python (jeux 2D de plateforme, scripts de mini-jeux). Expérimentation constante pour approfondir la logique de programmation.</p>
+                    <ul class="tags"><li>Python</li><li>Game Dev</li><li>Algorithmique</li></ul>
+                </li>
+                <li class="card activity-card" data-category="veille">
+                    <span class="card-badge">Veille</span>
+                    <div class="card-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                    <h2>Réseaux &amp; cybersécurité</h2>
+                    <p>Fort d'un cursus BTS CIEL, je réalise de la veille technique et des configurations pratiques (environnements Linux, règles de pare-feu, administration de bases de données sécurisées).</p>
+                    <ul class="tags"><li>Linux / Bash</li><li>PostgreSQL</li><li>Réseaux</li></ul>
+                </li>
+                <li class="card activity-card" data-category="parcours">
+                    <span class="card-badge">Parcours</span>
+                    <div class="card-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg></div>
+                    <h2>Cursus &amp; évolutions</h2>
+                    <p>Un parcours axé sur la technique : Bac STI2D (spécialité ITEC) obtenu avec mention assez bien, suivi d'un BTS CIEL (Cybersécurité, Informatique et Réseaux) obtenu avec 12,69 de moyenne, et désormais en Pré-MSc à Epitech.</p>
+                    <ul class="tags"><li>Epitech</li><li>BTS CIEL</li><li>Bac STI2D</li></ul>
+                </li>
+                <li class="card activity-card" data-category="parcours">
+                    <span class="card-badge">Expérience</span>
+                    <div class="card-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></div>
+                    <h2>Immersion &amp; interface web</h2>
+                    <p>Stage de 6 semaines réalisé au sein d'une entreprise de l'agroalimentaire durant mon BTS, axé sur la gestion et le développement d'une interface web.</p>
+                    <ul class="tags"><li>Stage web</li><li>Agroalimentaire</li><li>Professionnalisation</li></ul>
+                </li>
+                <li class="card activity-card" data-category="parcours">
+                    <span class="card-badge">Atouts</span>
+                    <div class="card-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg></div>
+                    <h2>Langues &amp; autonomie</h2>
+                    <p>Français (langue maternelle) et bon niveau d'anglais (B2) pour la veille technique. Titulaire du permis B et véhiculé, pour une totale autonomie.</p>
+                    <ul class="tags"><li>Anglais B2</li><li>Permis B</li><li>Autonomie</li></ul>
+                </li>
+            </ul>
+
+            <p class="page-next"><a href="contact.html" class="btn btn-primary">Me contacter</a></p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-id">
+                <p class="footer-name">Ewann Bertrand</p>
+                <address>Toulouse, France — Étudiant à Epitech</address>
+            </div>
+            <ul class="footer-links">
+                <li><a href="https://github.com/VanBert89" rel="noopener" target="_blank">GitHub<span class="sr-only"> (nouvel onglet)</span></a></li>
+                <li><a href="https://www.linkedin.com/in/ewann-bertrand-2447333bb/" rel="noopener" target="_blank">LinkedIn<span class="sr-only"> (nouvel onglet)</span></a></li>
+                <li><a href="credits.html">Crédits &amp; mentions</a></li>
+            </ul>
+            <div class="footer-end">
+                <a href="https://www.epitech.eu/" class="footer-epitech" rel="noopener" target="_blank">
+                    <img src="../images/logo-epitech.png" alt="Epitech, mon école actuelle (nouvel onglet)" width="198" height="48" loading="lazy">
+                </a>
+                <p class="copy">&copy; 2026 Ewann Bertrand</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js" defer></script>
+    <script src="../js/app.js" defer></script>
+    <script src="../js/informations.js" defer></script>
+</body>
+
+</html>

@@ -1,252 +1,104 @@
-console.log("Le script JS est bien chargé et actif !");
+const root = document.documentElement;
 
-/* -------------------- MODE SOMBRE (PRIORITAIRE) -------------------- */
-const themeToggleBtn = document.getElementById('theme-toggle');
+/* -------------------- THÈME CLAIR / SOMBRE -------------------- */
+// Le thème initial est appliqué dans le <head> (script inline) pour éviter le flash blanc.
+const themeToggle = document.querySelector('.theme-toggle');
 
-if (localStorage.getItem('theme') === 'dark') {
-    document.documentElement.classList.add('dark-mode');
-    if (themeToggleBtn) themeToggleBtn.textContent = "☀️";
+function updateThemeButton() {
+    if (!themeToggle) return;
+    const isDark = root.dataset.theme === 'dark';
+    themeToggle.setAttribute('aria-label', isDark ? 'Activer le thème clair' : 'Activer le thème sombre');
+    themeToggle.setAttribute('aria-pressed', String(isDark));
 }
 
-if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', function () {
-        document.documentElement.classList.toggle('dark-mode');
-        if (document.documentElement.classList.contains('dark-mode')) {
-            localStorage.setItem('theme', 'dark');
-            themeToggleBtn.textContent = "☀️";
-        } else {
-            localStorage.setItem('theme', 'light');
-            themeToggleBtn.textContent = "🌙";
+function setTheme(theme) {
+    root.dataset.theme = theme;
+    try {
+        localStorage.setItem('theme', theme);
+    } catch (e) {
+        // stockage indisponible (navigation privée) : le thème reste valable pour la page en cours
+    }
+    updateThemeButton();
+    loadParticles();
+}
+
+if (themeToggle) {
+    updateThemeButton();
+    themeToggle.addEventListener('click', () => {
+        setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
+    });
+}
+
+/* -------------------- MENU MOBILE -------------------- */
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.getElementById('menu');
+
+if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('is-open');
+        navToggle.setAttribute('aria-expanded', String(open));
+        navToggle.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navLinks.classList.contains('is-open')) {
+            navLinks.classList.remove('is-open');
+            navToggle.setAttribute('aria-expanded', 'false');
+            navToggle.focus();
         }
     });
 }
 
 /* -------------------- MODALES -------------------- */
-function ouvrirModal(id) {
-    document.getElementById(id).style.display = "flex";
-}
+// <button data-open-dialog="id-de-la-modale"> ouvre la modale correspondante.
+document.querySelectorAll('[data-open-dialog]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+        const dialog = document.getElementById(btn.dataset.openDialog);
+        if (dialog) dialog.showModal();
+    });
+});
 
-function fermerModal(id) {
-    document.getElementById(id).style.display = "none";
-}
+document.querySelectorAll('dialog.modal').forEach((dialog) => {
+    dialog.querySelectorAll('[data-close-dialog]').forEach((btn) => {
+        btn.addEventListener('click', () => dialog.close());
+    });
 
-window.onclick = function (event) {
-    if (event.target.classList.contains('modal')) {
-        event.target.style.display = "none";
-    }
-};
-
+    // Fermeture au clic sur le fond assombri
+    dialog.addEventListener('click', (e) => {
+        if (e.target === dialog) dialog.close();
+    });
+});
 
 /* -------------------- PARTICULES -------------------- */
-tsParticles.load("particles-js", {
-    fpsLimit: 60,
-    background: {
-        color: {
-            value: "transparent" // <-- C'est cette ligne qui manquait pour laisser voir à travers
-        }
-    },
-    particles: {
-        number: { value: 80, density: { enable: true, area: 800 } },
-        color: { value: "#0044ff" },
-        shape: { type: "circle" },
-        opacity: { value: 0.6 },
-        size: { value: 3, random: true },
-        links: {
-            enable: true,
-            distance: 180,
-            color: "#00ffcc",
-            opacity: 0.5,
-            width: 1
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function loadParticles() {
+    if (typeof tsParticles === 'undefined' || !document.getElementById('particles-js')) return;
+
+    // Couleurs lues dans les variables CSS : elles suivent automatiquement le thème
+    const styles = getComputedStyle(root);
+    const color = styles.getPropertyValue('--particle').trim();
+    const linkColor = styles.getPropertyValue('--particle-link').trim();
+    const isSmallScreen = window.innerWidth < 700;
+
+    tsParticles.load('particles-js', {
+        fpsLimit: 60,
+        background: { color: { value: 'transparent' } },
+        particles: {
+            number: { value: isSmallScreen ? 30 : 60, density: { enable: true, area: 900 } },
+            color: { value: color },
+            shape: { type: 'circle' },
+            opacity: { value: 0.5 },
+            size: { value: { min: 1, max: 3 } },
+            links: { enable: true, distance: 160, color: linkColor, opacity: 0.35, width: 1 },
+            move: { enable: !reduceMotion, speed: 0.8, outModes: { default: 'bounce' } }
         },
-        move: {
-            enable: true,
-            speed: 1.0,
-            outModes: { default: "bounce" }
-        }
-    },
-    interactivity: {
-        events: {
-            onHover: { enable: true, mode: "grab" },
-            onClick: { enable: false }
+        interactivity: {
+            events: { onHover: { enable: !isSmallScreen, mode: 'grab' }, onClick: { enable: false } },
+            modes: { grab: { distance: 160, links: { opacity: 0.6 } } }
         },
-        modes: {
-            grab: { distance: 180, links: { opacity: 0.8 } }
-        }
-    },
-    detectRetina: true
-});
-
-
-const form = document.querySelector(".contact-form");
-const nameInput = document.getElementById("name");
-const email = document.getElementById("email");
-const messageInput = document.getElementById("message");
-const messageCounter = document.getElementById("message-counter");
-
-if (form) {
-
-    /* ----------- Chargement sauvegarde ----------- */
-    nameInput.value = localStorage.getItem("savedName") || "";
-    email.value = localStorage.getItem("savedEmail") || "";
-    messageInput.value = localStorage.getItem("savedMessage") || "";
-
-    if (messageInput.value.length > 0) {
-        messageCounter.textContent = `${messageInput.value.length} caractères`;
-    }
-
-    /* ----------- Validation du formulaire ----------- */
-    form.addEventListener("submit", function (e) {
-        e.preventDefault(); // On bloque systématiquement l'envoi classique pour valider d'abord
-
-        // Reset visuel
-        nameInput.classList.remove("invalid");
-        email.classList.remove("invalid");
-        messageInput.classList.remove("invalid");
-
-        // Validation nom
-        if (nameInput.value.trim().length < 2) {
-            nameInput.classList.add("invalid");
-            showError("Votre nom doit contenir au moins 2 caractères.");
-            return;
-        }
-
-        // Validation email stricte (exige le format texte + @ + domaine + extension type .com/.fr)
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email.value)) {
-            email.classList.add("invalid");
-            showError("Veuillez entrer une adresse email valide (avec '@' et '.').");
-            return;
-        }
-
-        // Validation message
-        if (messageInput.value.trim().length < 10) {
-            messageInput.classList.add("invalid");
-            showError("Votre message doit contenir au moins 10 caractères.");
-            return;
-        }
-
-        // Si tout est valide, on affiche le loader et on envoie via Formspree
-        const loader = document.createElement("div");
-        loader.className = "loader";
-        form.prepend(loader);
-
-        const formData = new FormData(form);
-        // Affiche dans la console les données exactes envoyées à Formspree
-        for (let [key, value] of formData.entries()) {
-            console.log(key, ':', value);
-        }
-
-        fetch(form.action, {
-            method: "POST",
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        })
-            .then(async response => {
-                loader.remove();
-                if (response.ok) {
-                    showSuccess("Votre message a bien été envoyé !");
-                    form.reset();
-
-                    // Effacer sauvegarde
-                    localStorage.removeItem("savedName");
-                    localStorage.removeItem("savedEmail");
-                    localStorage.removeItem("savedMessage");
-
-                    // Reset compteur
-                    messageCounter.textContent = "0 caractères";
-                    messageCounter.classList.remove("valid", "invalid");
-                } else {
-                    // Récupère et affiche l'erreur précise de Formspree dans la console (F12)
-                    const data = await response.json();
-                    console.error("Détail de l'erreur Formspree :", data);
-                    showError("Erreur : " + (data.error || "Une erreur est survenue."));
-                }
-            })
-            .catch(error => {
-                loader.remove();
-                console.error("Erreur réseau :", error);
-                showError("Erreur réseau. Vérifiez votre connexion internet.");
-            });
-    });
-
-    /* ----------- Suppression du rouge quand on corrige ----------- */
-    nameInput.addEventListener("input", () => nameInput.classList.remove("invalid"));
-    email.addEventListener("input", () => email.classList.remove("invalid"));
-    messageInput.addEventListener("input", () => messageInput.classList.remove("invalid"));
-
-    /* ----------- Sauvegarde automatique ----------- */
-    nameInput.addEventListener("input", () => localStorage.setItem("savedName", nameInput.value));
-    email.addEventListener("input", () => localStorage.setItem("savedEmail", email.value));
-    messageInput.addEventListener("input", () => localStorage.setItem("savedMessage", messageInput.value));
-
-    /* ----------- Compteur dynamique ----------- */
-    messageInput.addEventListener("input", () => {
-        const length = messageInput.value.length;
-        messageCounter.textContent = `${length} caractères`;
-
-        if (length < 10) {
-            messageCounter.classList.add("invalid");
-            messageCounter.classList.remove("valid");
-        } else {
-            messageCounter.classList.add("valid");
-            messageCounter.classList.remove("invalid");
-        }
-    });
-
-    /* ----------- Auto‑resize du textarea ----------- */
-    messageInput.addEventListener("input", () => {
-        messageInput.style.height = "auto";
-        messageInput.style.height = messageInput.scrollHeight + "px";
+        detectRetina: true
     });
 }
 
-
-/* -------------------- MESSAGES -------------------- */
-function showError(message) {
-    const box = document.createElement("div");
-    box.className = "form-error";
-    box.textContent = message;
-    form.prepend(box);
-    setTimeout(() => box.remove(), 4000);
-}
-
-function showSuccess(message) {
-    const box = document.createElement("div");
-    box.className = "form-success";
-    box.textContent = message;
-    form.prepend(box);
-    setTimeout(() => box.remove(), 4000);
-}
-
-function demanderValidationTelephone() {
-    const confirmation = window.confirm("Voulez-vous vraiment afficher mon numéro de téléphone ? (Réservé aux professionnels et recruteurs)");
-
-    if (confirmation) {
-        const phoneContainer = document.getElementById("phone-container");
-        phoneContainer.outerHTML = `
-            <a href="tel:+33642817524" class="contact-btn phone-btn">
-                <img src="../images/phone-icon.png" alt="Téléphone" class="contact-icon">
-                <span>06 42 81 75 24</span>
-            </a>
-        `;
-    }
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    const urlParams = new URLSearchParams(window.location.search);
-    const from = urlParams.get('from');
-    const backBtn = document.getElementById('back-btn');
-    const backText = document.getElementById('back-text');
-
-    if (backBtn) {
-        if (from === 'parcours') {
-            backBtn.href = 'parcours-évo.html';
-            if (backText) backText.textContent = " Retour au parcours";
-        } else {
-            backBtn.href = 'index.html';
-            if (backText) backText.textContent = " Retour à l'index";
-        }
-    }
-});
+loadParticles();

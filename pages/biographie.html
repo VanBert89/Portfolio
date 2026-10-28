@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biographie et CV – Ewann Bertrand, étudiant développeur web</title>
+    <meta name="description" content="Découvrez Ewann Bertrand : 20 ans, diplômé d'un BTS CIEL, étudiant à Epitech Toulouse et passionné de développement web. CV à télécharger en PDF.">
+    <meta name="author" content="Ewann Bertrand">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://vanbert89.github.io/Portfolio/pages/biographie.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Portfolio d'Ewann Bertrand">
+    <meta property="og:title" content="Biographie et CV – Ewann Bertrand, étudiant développeur web">
+    <meta property="og:description" content="Découvrez Ewann Bertrand : 20 ans, diplômé d'un BTS CIEL, étudiant à Epitech Toulouse et passionné de développement web. CV à télécharger en PDF.">
+    <meta property="og:url" content="https://vanbert89.github.io/Portfolio/pages/biographie.html">
+    <meta property="og:image" content="https://vanbert89.github.io/Portfolio/images/photo-ewann.webp">
+    <meta name="twitter:card" content="summary">
+    <meta name="theme-color" content="#f6f8fb" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)">
+    <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+    <script>
+        (function () {
+            var t = null;
+            try { t = localStorage.getItem('theme'); } catch (e) { }
+            if (t !== 'dark' && t !== 'light') {
+                t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.dataset.theme = t;
+            document.documentElement.classList.add('js');
+        })();
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/biographie.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+    <div id="particles-js" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <nav class="navbar container" aria-label="Navigation principale">
+            <a class="brand" href="../index.html">Ewann<span>Bertrand</span></a>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu"
+                aria-label="Ouvrir le menu">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
+
+            <ul class="nav-links" id="menu">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="biographie.html" aria-current="page">Biographie</a></li>
+                <li><a href="projets.html">Projets</a></li>
+                <li><a href="parcours.html">Parcours</a></li>
+                <li><a href="technologies.html">Technologies</a></li>
+                <li><a href="informations.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <button class="theme-toggle" type="button" aria-label="Activer le thème sombre">
+                <svg class="icon icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                <svg class="icon icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            </button>
+        </nav>
+    </header>
+
+    <main id="contenu" class="site-main">
+        <div class="container narrow section">
+            <div class="bio-tabs" role="group" aria-label="Afficher la biographie ou le CV">
+                <button type="button" aria-controls="panel-bio" aria-pressed="true"
+                    data-slide-to="panel-bio">Biographie</button>
+                <button type="button" aria-controls="panel-cv" aria-pressed="false"
+                    data-slide-to="panel-cv">Mon CV</button>
+            </div>
+
+            <div class="bio-slider" id="bio-slider">
+                <!-- PANNEAU 1 : BIOGRAPHIE -->
+                <article class="bio-panel" id="panel-bio">
+                    <header class="bio-header">
+                        <img src="../images/photo-ewann.webp" alt="Portrait d'Ewann Bertrand" class="photo-profil"
+                            width="195" height="288">
+                        <div>
+                            <p class="eyebrow">À propos</p>
+                            <h1>Bienvenue sur ma biographie</h1>
+                            <p class="lead">20 ans, étudiant à Epitech Toulouse, passionné de développement web.</p>
+                        </div>
+                    </header>
+
+                    <div class="prose surface">
+                        <p>Je m'appelle Ewann Bertrand, j'ai 20 ans et je suis actuellement en formation Pré-MSc à
+                            <strong>Epitech Toulouse</strong>. Je suis un étudiant sérieux, motivé et déterminé à
+                            réaliser au mieux chaque tâche qui m'est confiée.</p>
+
+                        <p>Diplômé d'un <strong>BTS CIEL</strong> (Cybersécurité, Informatique et Réseaux,
+                            Électronique), je possède un socle de savoirs et de compétences variés dans le domaine de
+                            l'informatique, du numérique et de la cybersécurité.</p>
+
+                        <h2>Mes objectifs</h2>
+                        <p>Avec les trois années qui m'attendent au sein de cette école, mon objectif est d'approfondir
+                            l'expérience acquise lors de mes études antérieures afin de la mettre au service d'une
+                            entreprise intéressée par mon profil.</p>
+
+                        <h2>Ce que j'aime faire</h2>
+                        <p>Le domaine dans lequel je m'épanouis le plus est le développement, plus particulièrement le
+                            <strong>développement web</strong> (HTML, PHP) et la manipulation de <strong>bases de
+                            données</strong> (SQL). Ce sont les technologies que j'ai le plus utilisées durant mon
+                            cursus et celles avec lesquelles j'ai le plus d'expérience.</p>
+                        <p>Tout au long de mon parcours, j'ai conçu des projets web de plus en plus complexes, en phase
+                            avec la montée en puissance de mes compétences techniques.</p>
+
+                        <h2>Pourquoi l'informatique&nbsp;?</h2>
+                        <p>Omniprésente dans notre quotidien et en constante évolution, l'informatique a éveillé chez
+                            moi une curiosité grandissante au fil des ans. C'est cette passion pour l'innovation qui
+                            m'a conduit à en faire mon domaine d'études, concrétisée par la réalisation de projets, de
+                            sites web et de travaux pratiques à travers l'apprentissage de multiples langages et
+                            technologies.</p>
+                    </div>
+
+                    <button type="button" class="swipe-hint swipe-right" data-slide-to="panel-cv">
+                        <span>Glissez ou cliquez pour voir mon CV</span><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg>
+                    </button>
+                </article>
+
+                <!-- PANNEAU 2 : CV -->
+                <section class="bio-panel" id="panel-cv" aria-labelledby="cv-titre">
+                    <button type="button" class="swipe-hint swipe-left" data-slide-to="panel-bio">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg><span>Revenir à la biographie</span>
+                    </button>
+
+                    <div class="cv-wrapper">
+                        <h2 id="cv-titre">Mon curriculum vitæ</h2>
+                        <p class="lead">Retrouvez le récapitulatif complet de mes compétences.</p>
+
+                        <div class="cv-card surface">
+                            <div class="cv-card-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></div>
+                            <div>
+                                <p class="cv-card-name">CV_Ewann_Bertrand.pdf</p>
+                                <p class="cv-card-meta">Format PDF · Prêt pour le recrutement</p>
+                            </div>
+                            <div class="cv-card-actions">
+                                <button type="button" class="btn btn-secondary" data-open-dialog="modal-cv">
+                                    Prévisualiser</button>
+                                <a href="../documents/CV_Ewann_Bertrand.pdf" class="btn btn-primary"
+                                    download="CV_Ewann_Bertrand.pdf">Télécharger</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <p class="page-next"><a href="parcours.html" class="btn btn-primary">Découvrir mon parcours</a></p>
+        </div>
+
+        <dialog id="modal-cv" class="modal modal-cv" aria-labelledby="modal-cv-titre">
+            <button type="button" class="modal-close" data-close-dialog aria-label="Fermer"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+            <h2 id="modal-cv-titre">Prévisualisation du CV</h2>
+            <object data="../documents/CV_Ewann_Bertrand.pdf#toolbar=0&amp;navpanes=0&amp;view=Fit"
+                type="application/pdf" class="cv-viewer" title="CV d'Ewann Bertrand au format PDF">
+                <p>Votre navigateur ne peut pas afficher le PDF ici.
+                    <a href="../documents/CV_Ewann_Bertrand.pdf">Ouvrir le CV dans un nouvel onglet</a>.</p>
+            </object>
+        </dialog>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-id">
+                <p class="footer-name">Ewann Bertrand</p>
+                <address>Toulouse, France — Étudiant à Epitech</address>
+            </div>
+            <ul class="footer-links">
+                <li><a href="https://github.com/VanBert89" rel="noopener" target="_blank">GitHub<span class="sr-only"> (nouvel onglet)</span></a></li>
+                <li><a href="https://www.linkedin.com/in/ewann-bertrand-2447333bb/" rel="noopener" target="_blank">LinkedIn<span class="sr-only"> (nouvel onglet)</span></a></li>
+                <li><a href="credits.html">Crédits &amp; mentions</a></li>
+            </ul>
+            <div class="footer-end">
+                <a href="https://www.epitech.eu/" class="footer-epitech" rel="noopener" target="_blank">
+                    <img src="../images/logo-epitech.png" alt="Epitech, mon école actuelle (nouvel onglet)" width="198" height="48" loading="lazy">
+                </a>
+                <p class="copy">&copy; 2026 Ewann Bertrand</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js" defer></script>
+    <script src="../js/app.js" defer></script>
+    <script src="../js/biographie.js" defer></script>
+</body>
+
+</html>

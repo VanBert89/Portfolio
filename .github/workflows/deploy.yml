@@ -1,0 +1,67 @@
+# Vérifie la qualité du site puis le déploie automatiquement sur GitHub Pages.
+# - à chaque push sur main : vérifications + déploiement
+# - à chaque pull request : vérifications uniquement
+name: Vérification et déploiement
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  verifier:
+    name: Vérifier le site
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Valider le HTML (structure, accessibilité de base)
+        run: npx --yes html-validate@9 "**/*.html"
+
+      - name: Vérifier les liens internes (pages, images, CSS, JS)
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --offline --no-progress --exclude-path 404.html --root-dir "${{ github.workspace }}" "./**/*.html"
+          fail: true
+
+      - name: Audit Lighthouse (performance, accessibilité, SEO)
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          configPath: ./lighthouserc.json
+          uploadArtifacts: true
+
+  deployer:
+    name: Déployer sur GitHub Pages
+    needs: verifier
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

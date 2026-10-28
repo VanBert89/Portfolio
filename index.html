@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ewann Bertrand – Portfolio d'étudiant développeur web à Epitech Toulouse</title>
+    <meta name="description" content="Portfolio d'Ewann Bertrand, étudiant développeur web à Epitech Toulouse : projets HTML, CSS, PHP, SQL et Python, parcours et contact.">
+    <meta name="author" content="Ewann Bertrand">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://vanbert89.github.io/Portfolio/">
+    <meta property="og:type" content="profile">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Portfolio d'Ewann Bertrand">
+    <meta property="og:title" content="Ewann Bertrand – Portfolio d'étudiant développeur web à Epitech Toulouse">
+    <meta property="og:description" content="Portfolio d'Ewann Bertrand, étudiant développeur web à Epitech Toulouse : projets HTML, CSS, PHP, SQL et Python, parcours et contact.">
+    <meta property="og:url" content="https://vanbert89.github.io/Portfolio/">
+    <meta property="og:image" content="https://vanbert89.github.io/Portfolio/images/photo-ewann.webp">
+    <meta name="twitter:card" content="summary">
+    <meta name="theme-color" content="#f6f8fb" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <script>
+        (function () {
+            var t = null;
+            try { t = localStorage.getItem('theme'); } catch (e) { }
+            if (t !== 'dark' && t !== 'light') {
+                t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.dataset.theme = t;
+            document.documentElement.classList.add('js');
+        })();
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/accueil.css">
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ewann Bertrand",
+    "url": "https://vanbert89.github.io/Portfolio/",
+    "image": "https://vanbert89.github.io/Portfolio/images/photo-ewann.webp",
+    "jobTitle": "Étudiant développeur web",
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Toulouse",
+        "addressCountry": "FR"
+    },
+    "alumniOf": "Lycée les Lombards",
+    "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "Epitech Toulouse"
+    },
+    "sameAs": [
+        "https://github.com/VanBert89",
+        "https://www.linkedin.com/in/ewann-bertrand-2447333bb/"
+    ]
+}
+    </script>
+</head>
+
+<body>
+    <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+    <div id="particles-js" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <nav class="navbar container" aria-label="Navigation principale">
+            <a class="brand" href="index.html">Ewann<span>Bertrand</span></a>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu"
+                aria-label="Ouvrir le menu">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
+
+            <ul class="nav-links" id="menu">
+                <li><a href="index.html" aria-current="page">Accueil</a></li>
+                <li><a href="pages/biographie.html">Biographie</a></li>
+                <li><a href="pages/projets.html">Projets</a></li>
+                <li><a href="pages/parcours.html">Parcours</a></li>
+                <li><a href="pages/technologies.html">Technologies</a></li>
+                <li><a href="pages/informations.html">À propos</a></li>
+                <li><a href="pages/contact.html">Contact</a></li>
+            </ul>
+
+            <button class="theme-toggle" type="button" aria-label="Activer le thème sombre">
+                <svg class="icon icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                <svg class="icon icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            </button>
+        </nav>
+    </header>
+
+    <main id="contenu" class="site-main">
+        <section class="hero container" aria-labelledby="hero-titre">
+            <p class="eyebrow fade-in">Portfolio · Développeur web</p>
+            <h1 id="hero-titre" class="fade-in">Ewann Bertrand</h1>
+            <p class="hero-tagline fade-in">Concevoir, coder et donner vie au numérique.</p>
+            <p class="hero-intro fade-in">Étudiant à Epitech Toulouse, je combine rigueur technique et créativité à
+                travers des projets de développement web et de bases de données. Explorez mon parcours, découvrez mes
+                réalisations et suivez mon évolution dans l'univers du code.</p>
+
+            <div class="cta-group fade-in">
+                <a href="pages/projets.html" class="btn btn-primary">Voir mes projets</a>
+                <a href="pages/parcours.html" class="btn btn-secondary">Découvrir mon parcours</a>
+                <a href="pages/contact.html" class="btn btn-secondary">Me contacter</a>
+            </div>
+        </section>
+
+        <section class="container section" aria-labelledby="explorer-titre">
+            <h2 id="explorer-titre">Explorer le portfolio</h2>
+            <ul class="card-grid">
+                <li class="card">
+                    <h3><a class="card-link" href="pages/biographie.html">Ma biographie</a></h3>
+                    <p>Qui je suis, d'où je viens et ce qui me motive dans l'informatique.</p>
+                </li>
+                <li class="card">
+                    <h3><a class="card-link" href="pages/projets.html">Mes projets</a></h3>
+                    <p>Sites web, interfaces de gestion et scripts Python réalisés en formation et en entreprise.</p>
+                </li>
+                <li class="card">
+                    <h3><a class="card-link" href="pages/parcours.html">Mon parcours</a></h3>
+                    <p>Du BTS CIEL à Epitech, en passant par mes expériences professionnelles.</p>
+                </li>
+                <li class="card">
+                    <h3><a class="card-link" href="pages/technologies.html">Technologies maîtrisées</a></h3>
+                    <p>Une frise interactive des langages et outils que j'ai appris, du lycée à aujourd'hui.</p>
+                </li>
+                <li class="card">
+                    <h3><a class="card-link" href="pages/informations.html">Activités &amp; passions</a></h3>
+                    <p>Ce qui m'anime au-delà du cursus : sport, gaming, musique, projets perso et veille.</p>
+                </li>
+                <li class="card">
+                    <h3><a class="card-link" href="pages/contact.html">Me contacter</a></h3>
+                    <p>Email, LinkedIn, GitHub ou formulaire : choisissez le canal qui vous convient.</p>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-id">
+                <p class="footer-name">Ewann Bertrand</p>
+                <address>Toulouse, France — Étudiant à Epitech</address>
+            </div>
+            <ul class="footer-links">
+                <li><a href="https://github.com/VanBert89" rel="noopener" target="_blank">GitHub<span class="sr-only"> (nouvel onglet)</span></a></li>
+                <li><a href="https://www.linkedin.com/in/ewann-bertrand-2447333bb/" rel="noopener" target="_blank">LinkedIn<span class="sr-only"> (nouvel onglet)</span></a></li>
+                <li><a href="pages/credits.html">Crédits &amp; mentions</a></li>
+            </ul>
+            <div class="footer-end">
+                <a href="https://www.epitech.eu/" class="footer-epitech" rel="noopener" target="_blank">
+                    <img src="images/logo-epitech.png" alt="Epitech, mon école actuelle (nouvel onglet)" width="198" height="48" loading="lazy">
+                </a>
+                <p class="copy">&copy; 2026 Ewann Bertrand</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js" defer></script>
+    <script src="js/app.js" defer></script>
+</body>
+
+</html>

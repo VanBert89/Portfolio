@@ -1,0 +1,83 @@
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto 32px;
+}
+
+.filter-btn {
+    min-height: 40px;
+    padding: 6px 18px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--text);
+    font: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.filter-btn[aria-pressed="true"] {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--on-primary);
+}
+
+.activity-card {
+    padding-top: 28px;
+}
+
+.activity-card[hidden] {
+    display: none;
+}
+
+.activity-card h2 {
+    padding-right: 90px;
+}
+
+.activity-card p {
+    flex-grow: 1;
+}
+
+.activity-card .tags {
+    margin-bottom: 0;
+}
+
+.card-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--primary);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 18px;
+    border-radius: 12px;
+    background: var(--accent-soft);
+    color: var(--primary);
+}
+
+.card-icon .icon {
+    width: 28px;
+    height: 28px;
+}
